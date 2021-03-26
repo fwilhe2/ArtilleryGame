@@ -8,6 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: DoSomething
+    - name: Build
       run: |
+        git clone https://github.com/fwilhe2/Artillery-Game
+        cd Artillery-Game
+        ./gradlew publishToMavenLocal
+        cd ..
         ./gradlew check
